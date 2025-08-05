@@ -1,332 +1,152 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono&display=swap');
 
-body {
-    font-family: 'Roboto', sans-serif;
-    background-color: #0b1a3d; /* Dark blue background */
-    color: #e0e0e0;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start; /* Align to the top for the main container */
-    min-height: 100vh;
-    margin: 0;
-    padding: 20px;
-    box-sizing: border-box;
+:root{
+--branco: white;
+--cor-de-fundo: #00162E;
+--fundo-senha: #00244D;
+--fundo-texto: #001E40;
+--borda: #0075FF;
+--roboto: 'Roboto', sans-serif;
+--roboto-mono: 'Roboto Mono', monospace;
 }
 
-.container {
-    background-color: #122147; /* Slightly lighter blue for the main container */
-    padding: 30px 40px;
-    border-radius: 10px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-    width: 100%;
-    max-width: 600px;
-    margin-right: 30px; /* Space between main container and strength examples */
+*{
+font-weight: 400;
 }
 
-.header {
-    text-align: center;
-    margin-bottom: 30px;
+body{
+color: var(--branco);
+background-color: var(--cor-de-fundo);
+font-family: var(--roboto);
 }
 
-.lock-icon {
-    font-size: 48px;
-    color: #4CAF50; /* Green lock icon */
-    margin-bottom: 10px;
+.titulo-principal{
+font-family: var(--roboto-mono);
+font-size: 32px;
 }
 
-.header h1 {
-    font-size: 28px;
-    margin-bottom: 5px;
-    color: #ffffff;
+.titulo-secundario{
+font-size: 24px;
 }
 
-.header p {
-    font-size: 16px;
-    color: #a0a0a0;
+.conteudo-titulo{
+text-align: center;
+margin-top: 80px;
 }
 
-.password-display {
-    background-color: #0d1b38;
-    padding: 20px;
-    border-radius: 8px;
-    margin-bottom: 30px;
-    border-bottom: 2px solid #4CAF50; /* Green underline */
+.conteudo-senha{
+margin-top: 80px;
+background: var(--fundo-senha);
+padding: 24px;
+border-bottom: 6px solid var(--borda);
 }
 
-.password-display label {
-    display: block;
-    font-size: 14px;
-    color: #a0a0a0;
-    margin-bottom: 8px;
+#campo-senha{
+background-color: var(--fundo-senha);
+border: none;
+color: var(--branco);
+font-family: var(--roboto-mono);
+font-size: 40px;
+width: 70%;
 }
 
-.password-display input {
-    background: none;
-    border: none;
-    color: #ffffff;
-    font-size: 24px;
-    width: 100%;
-    outline: none;
-    padding: 0;
+#campo-senha:focus{
+outline: none;
 }
 
-.password-customization {
-    background-color: #0d1b38;
-    padding: 25px;
-    border-radius: 8px;
+.conteudo{
+max-width: 1200px;
+margin: 0 auto;
 }
 
-.password-customization h2 {
-    font-size: 20px;
-    margin-bottom: 20px;
-    color: #ffffff;
+.parametro{
+background-color: var(--fundo-texto);
+border: 2px solid var(--borda);
+margin-top: 32px;
+padding: 24px;
 }
 
-.customization-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 25px;
+.parametro-titulo{
+font-family: var(--roboto-mono);
+font-size: 28px;
 }
 
-@media (min-width: 768px) {
-    .customization-grid {
-        grid-template-columns: 1fr 1fr; /* Two columns for larger screens */
-    }
+.parametro-senha__titulo{
+font-size:24px;
 }
 
-.character-count h3,
-.password-characteristics h3,
-.password-strength h3 {
-    font-size: 16px;
-    margin-bottom: 15px;
-    color: #a0a0a0;
+.parametro-coluna__senha{
+display: flex;
+flex-direction: column;
+justify-content: center;
+}
+.parametro-senha{
+width: 50%;
+margin: 0 auto;
 }
 
-.input-group {
-    display: flex;
-    align-items: center;
-    background-color: #1a2a50;
-    border-radius: 5px;
-    overflow: hidden;
-    width: fit-content;
+.parametro-senha-botoes{
+display: flex;
+justify-content: center;
 }
 
-.input-group button {
-    background-color: #2b3d68;
-    border: none;
-    color: #ffffff;
-    font-size: 20px;
-    padding: 8px 15px;
-    cursor: pointer;
-    transition: background-color 0.2s;
+.parametro-senha__botao{
+background-color: var(--fundo-texto);
+color: var(--branco);
+border: 2px solid var(--borda);
+padding: 24px;
+font-size: 24px;
+cursor: pointer;
+}
+.parametro-senha__texto{
+padding: 24px;
+border-top: 2px solid var(--borda);
+border-bottom: 2px solid var(--borda);
+margin: 0;
+font-size: 24px;
 }
 
-.input-group button:hover {
-    background-color: #3d5282;
+label{
+font-size: 20px;
 }
 
-.input-group span {
-    padding: 8px 15px;
-    font-size: 18px;
-    min-width: 40px;
-    text-align: center;
+.checkbox{
+width: 20px;
+height: 20px;
+cursor: pointer;
 }
 
-.checkbox-container {
-    display: block;
-    position: relative;
-    padding-left: 30px;
-    margin-bottom: 12px;
-    cursor: pointer;
-    font-size: 16px;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+.barra{
+background-color: var(--fundo-senha);
+height: 30px;
+width: 100%;
+}
+.forca{
+height: 30px;
+position: relative;
+bottom: 30px;
+}
+.fraca{
+width: 25%;
+background-color: #E71B32;
+}
+.media{
+background-color: #FAF408;
+width: 50%;
+}
+.forte{
+background-color: #00FF85;
+width: 100%;
 }
 
-.checkbox-container input {
-    position: absolute;
-    opacity: 0;
-    cursor: pointer;
-    height: 0;
-    width: 0;
-}
-
-.checkmark {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 20px;
-    width: 20px;
-    background-color: #2b3d68;
-    border-radius: 4px;
-}
-
-.checkbox-container:hover input ~ .checkmark {
-    background-color: #3d5282;
-}
-
-.checkbox-container input:checked ~ .checkmark {
-    background-color: #4CAF50;
-}
-
-.checkmark:after {
-    content: "";
-    position: absolute;
-    display: none;
-}
-
-.checkbox-container input:checked ~ .checkmark:after {
-    display: block;
-}
-
-.checkbox-container .checkmark:after {
-    left: 7px;
-    top: 3px;
-    width: 5px;
-    height: 10px;
-    border: solid white;
-    border-width: 0 3px 3px 0;
-    -webkit-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    transform: rotate(45deg);
-}
-
-.password-strength {
-    grid-column: 1 / -1; /* Spans across all columns in grid */
-}
-
-.strength-indicator {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #1a2a50;
-    border-radius: 5px;
-    padding: 10px 15px;
-    font-size: 14px;
-    position: relative;
-    overflow: hidden; /* Ensures the strength bar stays within bounds */
-}
-
-.strength-indicator span {
-    z-index: 1; /* Make text appear above the background fill */
-}
-
-.strength-indicator::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 33.33%; /* Default to 'Fraca' (Weak) */
-    background-color: #f44336; /* Red for weak */
-    border-radius: 5px;
-    transition: width 0.3s ease-in-out, background-color 0.3s ease-in-out;
-    z-index: 0;
-}
-
-/* Example classes for different strengths (to be applied with JS typically) */
-.strength-indicator.weak::before {
-    width: 33.33%;
-    background-color: #f44336; /* Red */
-}
-
-.strength-indicator.medium::before {
-    width: 66.66%;
-    background-color: #ffeb3b; /* Yellow */
-}
-
-.strength-indicator.strong::before {
-    width: 100%;
-    background-color: #4CAF50; /* Green */
+.parametro-senha-textos{
+display: flex;
+justify-content: space-between;
 }
 
 
-/* Right side strength examples */
-.strength-examples {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    margin-top: 50px; /* Adjust margin to align with the design */
+@media screen and (min-width: 768px) {
+.parametro-coluna__senha{
+flex-direction: row;
 }
-
-.strength-bar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #1a2a50;
-    border-radius: 5px;
-    padding: 10px 15px;
-    font-size: 14px;
-    position: relative;
-    overflow: hidden;
-    width: 200px; /* Fixed width for the example bars */
-}
-
-.strength-bar span {
-    z-index: 1;
-}
-
-.strength-bar::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    border-radius: 5px;
-    z-index: 0;
-}
-
-.strength-bar.red::before {
-    width: 33.33%;
-    background-color: #f44336;
-}
-
-.strength-bar.yellow::before {
-    width: 66.66%;
-    background-color: #ffeb3b;
-}
-
-.strength-bar.green::before {
-    width: 100%;
-    background-color: #4CAF50;
-}
-
-/* Responsive adjustments */
-@media (max-width: 900px) {
-    body {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .container {
-        margin-right: 0;
-        margin-bottom: 30px;
-    }
-
-    .strength-examples {
-        margin-top: 0;
-        width: 100%;
-        max-width: 600px;
-        align-items: center; /* Center the example bars when in column layout */
-    }
-}
-
-@media (max-width: 480px) {
-    .container {
-        padding: 20px 25px;
-    }
-
-    .header h1 {
-        font-size: 24px;
-    }
-
-    .password-display input {
-        font-size: 20px;
-    }
-
-    .customization-grid {
-        grid-template-columns: 1fr;
-    }
 }
